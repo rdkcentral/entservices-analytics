@@ -40,7 +40,7 @@ git clone --branch 1.0.1 https://github.com/rdkcentral/entservices-testframework
 echo "======================================================================================"
 echo "buliding thunderTools"
 cd ThunderTools
-patch -p1 < $GITHUB_WORKSPACE/patches/00010-R4.4.6-Add-support-for-project-dir.patch
+patch -p1 < $GITHUB_WORKSPACE/entservices-infra/patches/00010-R4.4.6-Add-support-for-project-dir.patch
 cd -
 
 
