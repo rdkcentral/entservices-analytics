@@ -27,7 +27,7 @@ cd ..
 # Clone the required repositories
 
 
-git clone --branch  R4.4.3 https://github.com/rdkcentral/ThunderTools.git
+git clone --branch  R4.4.6 https://github.com/rdkcentral/ThunderTools.git
 
 git clone --branch R4.4.1 https://github.com/rdkcentral/Thunder.git
 
@@ -40,7 +40,7 @@ git clone --branch 1.0.1 https://github.com/rdkcentral/entservices-testframework
 echo "======================================================================================"
 echo "buliding thunderTools"
 cd ThunderTools
-patch -p1 < $GITHUB_WORKSPACE/entservices-testframework/patches/00010-R4.4-Add-support-for-project-dir.patch
+patch -p1 < $GITHUB_WORKSPACE/entservices-infra/patches/00010-R4.4.6-Add-support-for-project-dir.patch
 cd -
 
 
@@ -104,7 +104,6 @@ echo " Empty mocks creation to avoid compilation errors"
 echo "======================================================================================"
 mkdir -p headers
 mkdir -p headers/audiocapturemgr
-mkdir -p headers/rdk/ds
 mkdir -p headers/rdk/iarmbus
 mkdir -p headers/rdk/iarmmgrs-hal
 mkdir -p headers/rdk/halif/
@@ -125,24 +124,6 @@ cd headers
 echo "current working dir: "${PWD}
 touch audiocapturemgr/audiocapturemgr_iarm.h
 touch ccec/drivers/CecIARMBusMgr.h
-touch rdk/ds/audioOutputPort.hpp
-touch rdk/ds/compositeIn.hpp
-touch rdk/ds/dsDisplay.h
-touch rdk/ds/dsError.h
-touch rdk/ds/dsMgr.h
-touch rdk/ds/dsTypes.h
-touch rdk/ds/dsUtl.h
-touch rdk/ds/exception.hpp
-touch rdk/ds/hdmiIn.hpp
-touch rdk/ds/host.hpp
-touch rdk/ds/list.hpp
-touch rdk/ds/manager.hpp
-touch rdk/ds/sleepMode.hpp
-touch rdk/ds/videoDevice.hpp
-touch rdk/ds/videoOutputPort.hpp
-touch rdk/ds/videoOutputPortConfig.hpp
-touch rdk/ds/videoOutputPortType.hpp
-touch rdk/ds/videoResolution.hpp
 touch rdk/iarmbus/libIARM.h
 touch rdk/iarmbus/libIBus.h
 touch rdk/iarmbus/libIBusDaemon.h
@@ -168,7 +149,6 @@ touch rdk_logger_milestone.h
 touch audioOutputPortType.hpp
 touch audioOutputPortConfig.hpp
 touch tr181api.h
-touch dsRpc.h
 touch Dobby/DobbyProtocol.h
 touch Dobby/DobbyProxy.h
 touch Dobby/Public/Dobby/IDobbyProxy.h
